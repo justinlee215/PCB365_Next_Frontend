@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
 import Layout from '../../components/layout'
-import styles from '../../styles/CanadaCustomsInvoice.module.css'
+// import styles from '../../styles/CanadaCustomsInvoice.module.css'
 
 export default function CanadaCustomsInvoice( {...props}) {
   return (
@@ -13,12 +13,8 @@ export default function CanadaCustomsInvoice( {...props}) {
         <link rel="icon" href="/favicon.png" />
       </Head>
       <main>
-        <h1 className={styles.title}>
-          Forms
-        </h1>
-          <Link href="/"><a><img src="/pcb365.png" alt="pcb 365 logo" width="350"/></a></Link>
         <h2>
-          Canada Cusoms Invoice
+          Canada Customs Invoice
         </h2>
        </main>
     </Layout>

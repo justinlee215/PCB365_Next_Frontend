@@ -19,8 +19,9 @@
   }
 
   .blueBackgroundImage {
-    max-height: 400px;
+    max-height: 250px;
     overflow: hidden;
+    background-color: bisque;
     /* height: 200px; */
   }
 

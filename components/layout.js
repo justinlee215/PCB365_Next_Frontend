@@ -29,14 +29,14 @@ export default function Layout({ children, home }) {
       <header>
         <Navbar bg="light" expand="lg" className={styles.header}>
           <Container fluid>
-            <Navbar.Brand href="#"><Image
+            <Link href="/"><Navbar.Brand href="/"><Image
                 priority
                 src="/images/pcb365.png"
                 className={styles.logo}
                 height={66.5}
                 width={193}
                 alt={name}
-              /></Navbar.Brand>
+              /></Navbar.Brand></Link>
             <Navbar.Toggle aria-controls="navbarScroll" />
             <Navbar.Collapse id="navbarScroll">
               <Nav
@@ -44,10 +44,10 @@ export default function Layout({ children, home }) {
                 style={{ maxHeight: '100px' }}
                 navbarScroll
               >
-                <Link href="/"><Nav.Link>Personal</Nav.Link></Link>
-                <Link href="/"><Nav.Link>Small Business</Nav.Link></Link>
-                <Link href="/"><Nav.Link>Commercial</Nav.Link></Link>
-                <Link href="/"><Nav.Link>Global Markets</Nav.Link></Link>
+                <Link href="/"><Nav.Link href="/">Personal</Nav.Link></Link>
+                <Link href="/"><Nav.Link href="/">Small Business</Nav.Link></Link>
+                <Link href="/"><Nav.Link href="/">Commercial</Nav.Link></Link>
+                <Link href="/forms"><Nav.Link href="/">Documentations</Nav.Link></Link>
                 <NavDropdown title="Forms" id="navbarScrollingDropdown">
                 <Link href="/forms/canada-customs-invoice"><NavDropdown.Item href="#action3">Canada Customs Invoice</NavDropdown.Item></Link>
                 <Link href="/forms/us-customs-invoice"><NavDropdown.Item href="#action4">US Customs Invoice</NavDropdown.Item></Link>
@@ -69,7 +69,8 @@ export default function Layout({ children, home }) {
           </Container>
         </Navbar>
       </header>
-      { home && <div className={styles.blueBackgroundImage}><Image src="/images/blueBackground.jpg" alt="pcb current site Logo link" height={1688} width={3000}/></div>}
+
+      { home && <section><div className={styles.blueBackgroundImage}><Image src="/images/blueBackground.jpg" alt="pcb current site Logo link" height={1688} width={3000}/></div></section>}
       <main>{children}</main>
       <footer className={styles.footer}>
       {!home && (

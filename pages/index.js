@@ -7,36 +7,22 @@ import utilStyles from '../styles/utils.module.css'
 
 export default function Home() {
   return (
-    <Layout home>
+    <Layout home >
       <div className={styles.container}>
         <Head>
-          <title>PCB 365</title>
+          <title>{siteTitle}</title>
           <meta name="description" content="PCB 365 main landing page" />
           <link rel="icon" href="/favicon.png" />
         </Head>
 
-        <main className={styles.main}>
+        <main>
           <h1 className={styles.title}>
-            Welcome to 
+            Home
           </h1>
             <Link href="/"><a><img src="/images/pcb365.png" alt="pcb 365 logo" width="350"/></a></Link>
-
-          <h2 className={styles.title}>
-            Forms
-          </h2>
-
-          <div className={styles.grid}>
-            <Link href="/forms/canada-customs-invoice"><a className={styles.card}>
-              <h2>Canada Customs Invoice &rarr;</h2>
-              <p>Canadian Customs Invoice</p>
-            </a></Link>
-          </div>
-          <div className={styles.grid}>
-            <Link href="/forms/us-customs-invoice"><a className={styles.card}>
-              <h2>US Customs Invoice &rarr;</h2>
-              <p>US Customs Invoice</p>
-            </a></Link>
-          </div>
+          <div class={styles.hello}>content</div>
+          <div class={styles.hello}>content</div>
+          <div class={styles.hello}>content</div>
         </main>
       </div>
     </Layout>

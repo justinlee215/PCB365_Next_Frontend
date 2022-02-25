@@ -20,9 +20,9 @@ export default function Home() {
             Home
           </h1>
             <Link href="/"><a><img src="/images/pcb365.png" alt="pcb 365 logo" width="350"/></a></Link>
-          <div class={styles.hello}>content</div>
-          <div class={styles.hello}>content</div>
-          <div class={styles.hello}>content</div>
+          <div className={styles.hello}>content</div>
+          <div className={styles.hello}>content</div>
+          <div className={styles.hello}>content</div>
         </main>
       </div>
     </Layout>

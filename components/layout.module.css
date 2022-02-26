@@ -21,7 +21,7 @@
   .blueBackgroundImage {
     max-height: 250px;
     overflow: hidden;
-    background-color: bisque;
+    /* background-color: bisque; */
     /* height: 200px; */
   }
 
@@ -39,4 +39,16 @@
     position: absolute;
     left: 0;
     bottom: 0;
+  }
+
+  @media only screen and (max-width: 670px) {
+    .backToHome {
+      left: 1rem;
+      top: 1rem;
+      padding: 0;
+    }
+
+    .footer {
+      /* background-color: lightblue; */
+    }
   }

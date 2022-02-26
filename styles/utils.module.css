@@ -56,3 +56,14 @@
     margin: 5rem;
     /* background-color: lightpink; */
   }
+
+  .buttons {
+    position: relative;
+    width: 20rem;
+    height: auto;
+    /* background-color: aqua; */
+  }
+
+    .button {
+      margin: 0 0.5rem 0 0;
+    }

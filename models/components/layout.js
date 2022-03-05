@@ -44,7 +44,7 @@ export default function Layout({ children, home }) {
                 style={{ maxHeight: '100px' }}
                 navbarScroll
               >
-                <Link href="/"><Nav.Link href="/">Personal</Nav.Link></Link>
+                <Link href="/personal"><Nav.Link href="/personal">Personal</Nav.Link></Link>
                 <Link href="/"><Nav.Link href="/">Small Business</Nav.Link></Link>
                 <Link href="/"><Nav.Link href="/">Commercial</Nav.Link></Link>
                 <Link href="/achieve"><Nav.Link href="/">My Achieve</Nav.Link></Link>

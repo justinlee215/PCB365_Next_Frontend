@@ -19,16 +19,18 @@ export default function EditCanadaCustomsInvoice({ canadaCustomsInvoice }) {
   //steps indicating where button appears on different steps of forms
   const [step, setStep] = useState(0)
 
-  const { watch, register, handleSubmit, formState: { errors, isValid }} = useForm()
+  const { watch, register, handleSubmit, formState: { errors, isValid }} = useForm({
+    defaultValues: canadaCustomsInvoice
+  })
 
   const router = useRouter()
 
   const onSubmit =  async (content) => {
     console.log("content: ", content)
 
-    const response = await fetch("api/forms/CanadaCustomsInvoice", {
+    const response = await fetch(`http://localhost:3000/api/forms/CanadaCustomsInvoice/${canadaCustomsInvoice._id}`, {
     // const response = await fetch("/api/forms/CanadaCustomsInvoice", {
-      method: "POST",
+      method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
@@ -153,7 +155,7 @@ export default function EditCanadaCustomsInvoice({ canadaCustomsInvoice }) {
         step === fieldGroups.length-1 && 
         <Button type="submit" className={styles.button} disabled={!isValid}>
           <img src={rightArrow}/>
-          SUBMIT
+          UPDATE
         </Button>
       }
       {

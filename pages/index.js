@@ -14,15 +14,14 @@ export default function Home() {
           <meta name="description" content="PCB 365 main landing page" />
           <link rel="icon" href="/favicon.png" />
         </Head>
-
         <main>
           <h1 className={styles.title}>
             Home
           </h1>
             <Link href="/"><a><img src="/images/pcb365.png" alt="pcb 365 logo" width="350"/></a></Link>
-          <div className={styles.hello}>content</div>
-          <div className={styles.hello}>content</div>
-          <div className={styles.hello}>content</div>
+          <div className={styles.content}>content</div>
+          <div className={styles.content}>content</div>
+          <div className={styles.content}>content</div>
         </main>
       </div>
     </Layout>

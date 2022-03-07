@@ -41,7 +41,8 @@ export async function getStaticProps( context ) {
         <p>{archieve.shipperName}</p>
         <p>{archieve.exporterName}</p> */}
       </>
-      )}
+    )
+  }
     
-    export default Achieve
+export default Achieve
     

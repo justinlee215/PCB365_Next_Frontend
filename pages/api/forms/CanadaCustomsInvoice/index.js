@@ -1,7 +1,7 @@
-import { dbConnect } from '../../utils/dbConnect'
-import CanadaCustomsInvoice from '../../models/CanadaCustomsInvoice'
+import { dbConnect } from '../../../../utils/dbConnect'
+import CanadaCustomsInvoice from '../../../../models/CanadaCustomsInvoice'
 
-export default async function handler (req, res) {
+export default async function (req, res) {
   const { method } = req
 
   await dbConnect()
@@ -18,8 +18,9 @@ export default async function handler (req, res) {
       break
     case 'POST':
       try {
+        console.log("req.body: ", req.body)
         const canadaCustomsInvoice = await CanadaCustomsInvoice.create(req.body.canadaCustomsInvoice)
-        console.log("Form created: ", canadaCustomsInvoice)
+        console.log("Invoice created: ", canadaCustomsInvoice)
         res.status(201).json({ success: true, data: canadaCustomsInvoice })
       } catch (error) {
         res.status(400).json({ success: false })

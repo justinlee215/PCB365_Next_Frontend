@@ -49,7 +49,7 @@ export default function Layout({ children, home }) {
                 <Link href="/"><Nav.Link href="/">Commercial</Nav.Link></Link>
                 <Link href="/achieve"><Nav.Link href="/">My Achieve</Nav.Link></Link>
                 <NavDropdown title="Documentation" id="navbarScrollingDropdown">
-                <Link href="/forms/canada-customs-invoice"><NavDropdown.Item href="#action3">Canada Customs Invoice</NavDropdown.Item></Link>
+                <Link href="/forms/canadacustomsinvoice"><NavDropdown.Item href="#action3">Canada Customs Invoice</NavDropdown.Item></Link>
                 <Link href="/forms/us-customs-invoice"><NavDropdown.Item href="#action4">US Customs Invoice</NavDropdown.Item></Link>
                   <NavDropdown.Divider />
                   <Link href="/forms"><NavDropdown.Item href="#action5">All Documentation</NavDropdown.Item></Link>

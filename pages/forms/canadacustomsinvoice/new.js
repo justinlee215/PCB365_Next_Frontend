@@ -1,14 +1,15 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
-import Layout from '../../components/layout'
+import Layout from '../../../components/layout'
+import { useRouter } from 'next/router'
 
 import { Form, Tab, Sonnet, Tabs, Button, Alert } from 'react-bootstrap'
 
 import { useForm } from 'react-hook-form'
 import { useState } from 'react'
 
-import utilStyles from '../../styles/utils.module.css'
+import styles from './canadacustomsinvoice.module.css'
 
 export default function CanadaCustomsInvoice({...props}) {
   
@@ -17,10 +18,13 @@ export default function CanadaCustomsInvoice({...props}) {
 
   const { watch, register, handleSubmit, formState: { errors, isValid }} = useForm()
 
+  const router = useRouter()
+
   const onSubmit =  async (content) => {
     console.log("content: ", content)
 
-    const response = await fetch("/api/CanadaCustomsInvoice", {
+    const response = await fetch("http://localhost:3000/api/forms/CanadaCustomsInvoice", {
+    // const response = await fetch("/api/forms/CanadaCustomsInvoice", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -36,6 +40,8 @@ export default function CanadaCustomsInvoice({...props}) {
     })
     .catch(err => console.log("Error: ", err))
 
+    router.push('/forms/canadacustomsinvoice')
+    
     console.log("Data Created on DB: ", response)
   }
   
@@ -111,7 +117,7 @@ export default function CanadaCustomsInvoice({...props}) {
       <Input label="UNIT QUANTITY" name="units" required type="text" placeholder="" step={step + 1}/>
       <Input label="UNIT PRICE" name="unitPrice" required type="number" placeholder="" step={step + 1}/>
       <Input label="TOTAL" name="total" required type="number" placeholder="" step={step + 1}/>
-      <div className="form-group col-sm-2">
+      {/* <div className="form-group col-sm-2">
         <button
           className="btn btn-link"
           type="button"
@@ -127,29 +133,29 @@ export default function CanadaCustomsInvoice({...props}) {
         >
           +
         </button>
-      </div>
+      </div> */}
     </section>
   )
 
   const Buttons = () => (
-    <section className={ utilStyles.buttons}>
+    <section className={ styles.buttons}>
       {
         step > 0 &&
-      <Button type="button" className={utilStyles.button} onClick={()=>{setStep(step - 1)}}>
+      <Button type="button" className={styles.button} onClick={()=>{setStep(step - 1)}}>
         <img src={leftArrow}/>
         BACK
       </Button>
       }
       {
         step === fieldGroups.length-1 && 
-        <Button type="submit" className={utilStyles.button} disabled={!isValid}>
+        <Button type="submit" className={styles.button} disabled={!isValid}>
           <img src={rightArrow}/>
           SUBMIT
         </Button>
       }
       {
         step < fieldGroups.length-1 &&
-        <Button type="button" className={utilStyles.button} disabled={!isValid} onClick={() => {setStep(step + 1)}}>
+        <Button type="button" className={styles.button} disabled={!isValid} onClick={() => {setStep(step + 1)}}>
           <img src={rightArrow}/>
           NEXT
         </Button>
@@ -157,11 +163,11 @@ export default function CanadaCustomsInvoice({...props}) {
     </section>
   )
 
-  const Reference = () =>(
-    <footer >
-      {renderMarkers()}
-    </footer>
-  )
+  // const Reference = () =>(
+  //   <footer >
+  //     {renderMarkers()}
+  //   </footer>
+  // )
   
   // function renderMarkers(){
   //   let markers = []
@@ -172,16 +178,16 @@ export default function CanadaCustomsInvoice({...props}) {
 
   const fieldGroups = [
     <ShipperFields step={step}/>,
-    // <ExporterFields step={step}/>,
-    // <ConsigneeFields step={step}/>,
-    // <BuyerFields step={step}/>,
-    // <GoodsFields step={step} />
+    <ExporterFields step={step}/>,
+    <ConsigneeFields step={step}/>,
+    <BuyerFields step={step}/>,
+    <GoodsFields step={step} />
   ]
 
   return (
     <Layout>
       <Head>
-        <title>Canada Customs Invoice(Multi Part)</title>
+        <title>Canada Customs Invoice</title>
         <meta name="description" content="Complex Forms" />
         <link rel="icon" href="/favicon.png" />
       </Head>

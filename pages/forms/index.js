@@ -16,7 +16,6 @@ export default function Form( {...props}) {
         <h1 className={styles.title}>
           Documentation
         </h1>
-        <div className={styles.container}></div>
         <div className={styles.formBox}>
           <div className={styles.grid}>
             <Link href="/forms/canada-customs-invoice"><a className={styles.card}>

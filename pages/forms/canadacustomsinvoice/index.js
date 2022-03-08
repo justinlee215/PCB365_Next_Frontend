@@ -7,8 +7,8 @@ import { Button, Alert } from 'react-bootstrap'
 
 import styles from './canadacustomsinvoice.module.css'
 
-import { dbConnect } from '../../../utils/dbConnect'
-import CanadaCustomsInvoice from '../../../models/CanadaCustomsInvoice'
+// import { dbConnect } from '../../../utils/dbConnect'
+// import CanadaCustomsInvoice from '../../../models/CanadaCustomsInvoice'
 
 export default function ({ canadaCustomsInvoices }) {
 
@@ -50,30 +50,32 @@ export default function ({ canadaCustomsInvoices }) {
   ) 
 }
 
-export async function getServerSideProps() {
-    await dbConnect()
-  
-    const result = await CanadaCustomsInvoice.find({})
-    
-    const canadaCustomsInvoices = result.reverse().map((doc) => {
-      const invoice = doc.toObject()
-      invoice._id = doc._id.toString()
-      return invoice
-    })
+export async function getStaticProps() {
+  // const canadaCustomsInvoices = await CanadaCustomsInvoice.find({})
 
-    return { props: { canadaCustomsInvoices: canadaCustomsInvoices } }
+  const res = await fetch('http://localhost:3000/api/forms/CanadaCustomsInvoice')
+  const canadaCustomsInvoices = await res.json()
+
+  console.log("canadaCustomsInvoices: ", canadaCustomsInvoices)
+  return {
+    props: 
+    { canadaCustomsInvoices: canadaCustomsInvoices.data.reverse() }
+  }
 }
 
-// export async function getStaticProps() {
-//   // const canadaCustomsInvoices = await CanadaCustomsInvoice.find({})
+// export async function getServerSideProps() {
+//     await dbConnect()
+  
+//     const result = await CanadaCustomsInvoice.find({})
+    
+//     const canadaCustomsInvoices = result.reverse().map((doc) => {
+//       const invoice = doc.toObject()
+//       invoice._id = doc._id.toString()
+//       return invoice
+//     })
 
-//   const res = await fetch('http://localhost:3000/api/forms/CanadaCustomsInvoice')
-//   const canadaCustomsInvoices = await res.json()
-
-//   console.log("canada2: ", canada)
-//   return {
-//     props: 
-//     { canadaCustomsInvoices }
-//   }
+//     return { props: { canadaCustomsInvoices: canadaCustomsInvoices } }
 // }
+
+
 

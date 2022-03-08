@@ -13,14 +13,14 @@ export default async function handler (req, res) {
     case 'GET':
         console.log("findingId:", id)
       try {
-        const USCustomsInvoice = await USCustomsInvoice.findById(id)
+        const usCustomsInvoice = await USCustomsInvoice.findById(id)
 
-        if (!USCustomsInvoice) {
+        if (!usCustomsInvoice) {
             return res.status(400).json({ success: false })
         }
 
-        res.status(200).json({ success: true, data: USCustomsInvoice })
-        console.log("Found the data from the database: ", USCustomsInvoice)
+        res.status(200).json({ success: true, data: usCustomsInvoice })
+        console.log("Found the data from the database: ", usCustomsInvoice)
       } catch (error) {
         res.status(400).json({ success: false })
       }

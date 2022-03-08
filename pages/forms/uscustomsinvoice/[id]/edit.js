@@ -12,7 +12,7 @@ import { useState } from 'react'
 import { dbConnect } from '../../../../utils/dbConnect'
 import USCustomsInvoice from '../../../../models/USCustomsInvoice'
 
-import styles from './../UScustomsinvoice.module.css'
+import styles from './../uscustomsinvoice.module.css'
 
 export default function EditUSCustomsInvoice({ USCustomsInvoice }) {
   console.log("US from edit: ", USCustomsInvoice)

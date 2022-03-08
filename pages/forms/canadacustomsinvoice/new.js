@@ -24,7 +24,6 @@ export default function CanadaCustomsInvoice({...props}) {
     console.log("content: ", content)
 
     const response = await fetch("http://localhost:3000/api/forms/CanadaCustomsInvoice", {
-    // const response = await fetch("/api/forms/CanadaCustomsInvoice", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

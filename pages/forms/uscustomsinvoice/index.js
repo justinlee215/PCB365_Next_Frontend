@@ -7,12 +7,12 @@ import { Button, Alert } from 'react-bootstrap'
 
 import styles from './uscustomsinvoice.module.css'
 
-import { dbConnect } from '../../../utils/dbConnect'
-import USCustomsInvoice from '../../../models/USCustomsInvoice'
+// import { dbConnect } from '../../../utils/dbConnect'
+// import USCustomsInvoice from '../../../models/USCustomsInvoice'
 
-export default function ({ USCustomsInvoices }) {
+export default function ({ usCustomsInvoices }) {
 
-  console.log("US: ", USCustomsInvoices)
+  console.log("usCustomsInvoices: ", usCustomsInvoices)
   return (
     <Layout home>
       <Head>
@@ -28,7 +28,7 @@ export default function ({ USCustomsInvoices }) {
           <Link href={`/forms/uscustomsinvoice/new`}><Button className={styles.button}>Create New</Button></Link>
         </div>
         <div className={styles.formBox}>
-        { USCustomsInvoices.map((invoice => (
+        { usCustomsInvoices.map((invoice => (
           <div key={invoice._id}>
               <div className={styles.grid}>
                   <Link href={`/forms/uscustomsinvoice/${invoice._id}`}>
@@ -50,30 +50,27 @@ export default function ({ USCustomsInvoices }) {
   ) 
 }
 
-export async function getServerSideProps() {
-    await dbConnect()
-  
-    const result = await USCustomsInvoice.find({})
-    
-    const USCustomsInvoices = result.reverse().map((doc) => {
-      const invoice = doc.toObject()
-      invoice._id = doc._id.toString()
-      return invoice
-    })
+export async function getStaticProps() {
 
-    return { props: { USCustomsInvoices: USCustomsInvoices } }
+  const res = await fetch('http://localhost:3000/api/forms/USCustomsInvoice')
+  const usCustomsInvoices = await res.json()
+
+  console.log("data fetched: ", usCustomsInvoices)
+  return {
+    props: { usCustomsInvoices: usCustomsInvoices.data.reverse() }
+  }
 }
 
-// export async function getStaticProps() {
-//   // const USCustomsInvoices = await USCustomsInvoice.find({})
+// export async function getServerSideProps() {
+//     await dbConnect()
+  
+//     const result = await USCustomsInvoice.find({})
+    
+//     const usCustomsInvoices = result.reverse().map((doc) => {
+//       const invoice = doc.toObject()
+//       invoice._id = doc._id.toString()
+//       return invoice
+//     })
 
-//   const res = await fetch('http://localhost:3000/api/forms/USCustomsInvoice')
-//   const USCustomsInvoices = await res.json()
-
-//   console.log("US2: ", US)
-//   return {
-//     props: 
-//     { USCustomsInvoices }
-//   }
+//     return { props: { usCustomsInvoices: usCustomsInvoices } }
 // }
-

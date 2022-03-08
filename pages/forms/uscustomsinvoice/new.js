@@ -24,7 +24,6 @@ export default function USCustomsInvoice({...props}) {
     console.log("content: ", content)
 
     const response = await fetch("http://localhost:3000/api/forms/USCustomsInvoice", {
-    // const response = await fetch("/api/forms/USCustomsInvoice", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

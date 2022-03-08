@@ -1,5 +1,5 @@
 import { dbConnect } from '../../../../utils/dbConnect'
-import CanadaCustomsInvoice from '../../../../models/CanadaCustomsInvoice'
+import USCustomsInvoice from '../../../../models/USCustomsInvoice'
 
 export default async function handler (req, res) {
   const { 
@@ -13,14 +13,14 @@ export default async function handler (req, res) {
     case 'GET':
         console.log("findingId:", id)
       try {
-        const canadaCustomsInvoice = await CanadaCustomsInvoice.findById(id)
+        const USCustomsInvoice = await USCustomsInvoice.findById(id)
 
-        if (!canadaCustomsInvoice) {
+        if (!USCustomsInvoice) {
             return res.status(400).json({ success: false })
         }
 
-        res.status(200).json({ success: true, data: canadaCustomsInvoice })
-        console.log("Found the data from the database: ", canadaCustomsInvoice)
+        res.status(200).json({ success: true, data: USCustomsInvoice })
+        console.log("Found the data from the database: ", USCustomsInvoice)
       } catch (error) {
         res.status(400).json({ success: false })
       }
@@ -28,17 +28,17 @@ export default async function handler (req, res) {
     case 'PUT':
       try {
         console.log("req.body: ", req.body)
-        const canadaCustomsInvoice = await CanadaCustomsInvoice.findByIdAndUpdate(id, req.body.canadaCustomsInvoice, {
+        const usCustomsInvoice = await USCustomsInvoice.findByIdAndUpdate(id, req.body.USCustomsInvoice, {
             new: true,
             runValidator: true
         } )
 
-        if (!canadaCustomsInvoice) {
+        if (!USCustomsInvoice) {
             return res.status(400).json({ success: false })
         }
 
-        res.status(200).json({ success: true, data: canadaCustomsInvoice })
-        console.log("Found the data updated to the database: ", canadaCustomsInvoice)
+        res.status(200).json({ success: true, data: usCustomsInvoice })
+        console.log("Found the data updated to the database: ", usCustomsInvoice)
       } catch (error) {
         res.status(400).json({ success: false })
       }
@@ -46,14 +46,14 @@ export default async function handler (req, res) {
     case 'DELETE':
         try {
           console.log("id: ", id)
-          const canadaCustomsInvoice = await CanadaCustomsInvoice.deleteOne({_id: id })
+          const usCustomsInvoice = await USCustomsInvoice.deleteOne({_id: id })
 
-        if (!canadaCustomsInvoice) {
+        if (!usCustomsInvoice) {
           return res.status(400).json({ success: false })
         }
 
         res.status(200).json({ success: true, data: {} })
-        console.log("The data deleted: ", canadaCustomsInvoice)
+        console.log("The data deleted: ", usCustomsInvoice)
       } catch (error) {
         res.status(400).json({ success: false })
       }

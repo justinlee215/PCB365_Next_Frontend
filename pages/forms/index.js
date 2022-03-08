@@ -18,53 +18,53 @@ export default function Form( {...props}) {
         </h1>
         <div className={styles.formBox}>
           <div className={styles.grid}>
-            <Link href="/forms/canada-customs-invoice"><a className={styles.card}>
+            <Link href="/forms/canadacustomsinvoice"><a className={styles.card}>
               <h2>Canada Customs Invoice &rarr;</h2>
               <p>Canadian Customs Invoice</p>
             </a></Link>
           </div>
           <div className={styles.grid}>
-            <Link href="/forms/us-customs-invoice"><a className={styles.card}>
+            <Link href="/forms/uscustomsinvoice"><a className={styles.card}>
               <h2>US Customs Invoice &rarr;</h2>
               <p>US Customs Invoice</p>
             </a></Link>
           </div>
 
           <div className={styles.grid}>
-            <Link href="/forms/us-customs-invoice"><a className={styles.card}>
+            <Link href="/forms/uscustomsinvoice"><a className={styles.card}>
               <h2>US Customs Invoice &rarr;</h2>
               <p>US Customs Invoice</p>
             </a></Link>
           </div>
 
           <div className={styles.grid}>
-            <Link href="/forms/us-customs-invoice"><a className={styles.card}>
+            <Link href="/forms/uscustomsinvoice"><a className={styles.card}>
               <h2>US Customs Invoice &rarr;</h2>
               <p>US Customs Invoice</p>
             </a></Link>
           </div>
           <div className={styles.grid}>
-            <Link href="/forms/canada-customs-invoice"><a className={styles.card}>
+            <Link href="/forms/canadacustomsinvoice"><a className={styles.card}>
               <h2>Canada Customs Invoice &rarr;</h2>
               <p>Canadian Customs Invoice</p>
             </a></Link>
           </div>
           <div className={styles.grid}>
-            <Link href="/forms/us-customs-invoice"><a className={styles.card}>
+            <Link href="/forms/uscustomsinvoice"><a className={styles.card}>
               <h2>US Customs Invoice &rarr;</h2>
               <p>US Customs Invoice</p>
             </a></Link>
           </div>
 
           <div className={styles.grid}>
-            <Link href="/forms/us-customs-invoice"><a className={styles.card}>
+            <Link href="/forms/uscustomsinvoice"><a className={styles.card}>
               <h2>US Customs Invoice &rarr;</h2>
               <p>US Customs Invoice</p>
             </a></Link>
           </div>
 
           <div className={styles.grid}>
-            <Link href="/forms/us-customs-invoice"><a className={styles.card}>
+            <Link href="/forms/uscustomsinvoice"><a className={styles.card}>
               <h2>US Customs Invoice &rarr;</h2>
               <p>US Customs Invoice</p>
             </a></Link>

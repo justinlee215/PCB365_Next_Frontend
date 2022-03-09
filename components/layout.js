@@ -45,8 +45,8 @@ export default function Layout({ children, home }) {
                 navbarScroll
               >
                 <Link href="/personal"><Nav.Link href="/personal">Personal</Nav.Link></Link>
-                <Link href="/"><Nav.Link href="/">Small Business</Nav.Link></Link>
-                <Link href="/"><Nav.Link href="/">Commercial</Nav.Link></Link>
+                <Link href="/forms/dynamic"><Nav.Link href="/">Small Business</Nav.Link></Link>
+                <Link href="/forms/dynamicTest"><Nav.Link href="/">Commercial</Nav.Link></Link>
                 <Link href="/achieve"><Nav.Link href="/">My Achieve</Nav.Link></Link>
                 <NavDropdown title="Documentation" id="navbarScrollingDropdown">
                 <Link href="/forms/canadacustomsinvoice"><NavDropdown.Item href="#action3">Canada Customs Invoice</NavDropdown.Item></Link>

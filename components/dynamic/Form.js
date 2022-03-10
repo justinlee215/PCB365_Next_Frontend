@@ -97,7 +97,6 @@ const Form = ({ formData }) => {
                   key={field._uid}
                   field={field}
                   fieldChanged={fieldChanged}
-                  // should probably only slice out the required values, but ¯\_(ツ)_/¯
                   values={values}
                 />
               );

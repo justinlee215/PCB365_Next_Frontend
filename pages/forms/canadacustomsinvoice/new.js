@@ -12,7 +12,9 @@ import { useState } from 'react'
 import styles from './canadacustomsinvoice.module.css'
 
 export default function CanadaCustomsInvoice({...props}) {
-  
+
+  // console.log("rendering from CanadaCustomsInvoice", count)
+
   //steps indicating where button appears on different steps of forms
   const [step, setStep] = useState(0)
 
@@ -177,10 +179,10 @@ export default function CanadaCustomsInvoice({...props}) {
 
   const fieldGroups = [
     <ShipperFields step={step}/>,
-    // <ExporterFields step={step}/>,
-    // <ConsigneeFields step={step}/>,
-    // <BuyerFields step={step}/>,
-    // <GoodsFields step={step} />
+    <ExporterFields step={step}/>,
+    <ConsigneeFields step={step}/>,
+    <BuyerFields step={step}/>,
+    <GoodsFields step={step} />
   ]
 
   return (

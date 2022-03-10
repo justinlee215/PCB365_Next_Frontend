@@ -6,7 +6,7 @@ import { Button} from 'react-bootstrap'
 
 import styles from './dynamicTest.module.css'
 
-import { formData } from '../../../components/dynamic/formData4'
+import { formData } from '../../../components/dynamic/formData5'
 import Form from '../../../components/dynamic/Form'
 
 export default function index() {
@@ -22,6 +22,9 @@ export default function index() {
         <h1 className={styles.title}>
           Dynamic Forms from JSON Data
         </h1>
+        <h2 className={styles.title}>
+          ( version: { formData.version} )
+        </h2>
       </div>
       <div className="App">
         <Form formData={formData} />

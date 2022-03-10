@@ -1,48 +1,58 @@
 export const formData ={ 
-  version: "2022.11.01", 
+  version: "2020.11.01", 
   data: [
   {
     component: "section",
     label: "1",
-    _uid: "0c946643-5a83-4545-baea-055b27b51e8a",
-
+    _uid: "3a30803f-135f-442-ab6e-d44d7d7a5164",
     fields: [
       {
-        component: "field_group",
-        label: "Shipper",
-        _uid: "eb169f76-4cd9-4513-b673-87c5c7d27e02",
-        fields: [
+        component: "text",
+        label: "PHONE",
+        type: "text",
+        _uid: "5b9b79d2-32f2-42a1-b89f-203df0b6b98"
+      },
+      {
+        component: "text",
+        label: "ADDRESS",
+        type: "text",
+        _uid: "6eff3638-80a7-427-b07b-4c1be1c6b186"
+      },
+      {
+        component: "options",
+        label: "IRS NUMBER / EIN NUMBER / SOCIAL SECURITY NUMBER - *mandatory for U.S. clearance",
+        type: "radio",
+        _uid: "bd90f44a-d479-49ae-ad66-c2c475dca66b",
+        options: [
           {
-            component: "text",
-            label: "NAME",
-            type: "text",
-            _uid: "5b9b79d2-32f2-42a1-b89f-203dfc0b6b98"
+            component: "option",
+            label: "None U.S. cleanrance",
+            value: "one"
           },
           {
-            component: "text",
-            label: "CONTACT",
-            type: "text",
-            _uid: "6eff3638-80a7-4427-b07b-4c1be1c6b186"
-          },
-          {
-            component: "text",
-            label: "PHONE",
-            type: "text",
-            _uid: "5b9b79d2-32f2-42a1-b89f-203dfc0b6b93"
-          },
-          {
-            component: "text",
-            label: "ADDRESS",
-            type: "text",
-            _uid: "6eff3638-80a7-4427-b07b-4c1be1c6b181"
+            component: "option",
+            label: "U.S. cleanrance",
+            value: "two"
           }
         ]
       },
+      {
+        component: "text",
+        label: "IRS NUMBER / EIN NUMBER / SOCIAL SECURITY NUMBER",
+        type: "text",
+        _uid: "bd90f44a-d479-49ae-ad66-c2c475daa66b",
+        conditional: {
+          value: "two",
+          field:
+            "3a30803f-135f-442c-ab6e-d44d7d7a5164_bd90f44a-d479-49ae-ad66-c2c475dca66b"
+        },
+        
+      }
     ]
   },
   {
     component: "section",
-    label: "2",
+    label: "1",
     _uid: "0c946643-5a83-4545-baea-055b27b5e8a",
 
     fields: [

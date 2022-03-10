@@ -30,6 +30,8 @@ export default function ({ canadaCustomsInvoice }) {
         }
     }
 
+    const { _id, formType, shipperName, shipperAddress, buyerIrs, shipperPhone, buyerAddress, buyerName, consigneeName, buyerIRS, shipperContact, exporterName, exporterAddress, exporterPhone, exporterContact, createdAt, updatedAt, buyerPhone, consigneeAddress, consigneeIRS , consigneePhone, otherRefNosName } = canadaCustomsInvoice
+
   return (
     <Layout home>
       <Head>
@@ -40,27 +42,44 @@ export default function ({ canadaCustomsInvoice }) {
       <main>
         <div className={styles.createNewBox}>
             <h1 className={styles.title}>
-                {canadaCustomsInvoice._id}
+                {formType}
             </h1>
             <div>
-                <Link href={`/forms/canadacustomsinvoice/${canadaCustomsInvoice._id}/edit`}>
+                <Link href={`/forms/canadacustomsinvoice/${_id}/edit`}>
                     <Button className={styles.button}>Edit</Button>
                 </Link>
                 <Button className={styles.button} onClick={handleClick}>Delete</Button>
             </div>
         </div>
-        <div className={styles.formBox}>
-          <div key={canadaCustomsInvoice._id}>
-            <div className={styles.grid}>
-                <h2>{canadaCustomsInvoice.formType} &rarr;</h2>
-                <div><p>{canadaCustomsInvoice.createdAt}</p></div>
-                <div><p>{canadaCustomsInvoice.shipperAddress}</p></div>
-                {/* <p>Updated at {canadaCustomsInvoice.createdAt}</p>
-                <p>Updated at {canadaCustomsInvoice.updatedAt}</p> */}
-                {/* <p>{ObjectId("621e23407d301fa19a38b548").getTimestamp()}</p> */}
+          <h2>Shipper Name: {shipperName} </h2>
+          <div className={styles.grid}>
+            <div className={styles.formDetail}>
+              <div className={styles.formLine}><span className={styles.lineTitle}>Shipper Name: </span>{shipperName}</div>
+              <div className={styles.formLine}><span className={styles.lineTitle}>Shipper Contact: </span>{shipperContact}</div>
+              <div className={styles.formLine}><span className={styles.lineTitle}>Shipper Phone: </span>{shipperPhone}</div>
+              <div className={styles.formLine}><span className={styles.lineTitle}>Shipper Address: </span>{shipperAddress}</div>
+              <br/>
+              <div className={styles.formLine}><span className={styles.lineTitle}>Exporter Name: </span>{exporterName}</div>
+              <div className={styles.formLine}><span className={styles.lineTitle}>Exporter Contact: </span>{exporterContact}</div>
+              <div className={styles.formLine}><span className={styles.lineTitle}>Exporter Phone: </span>{exporterPhone}</div>
+              <div className={styles.formLine}><span className={styles.lineTitle}>Exporter Address: </span>{exporterAddress}</div>
+              <br />
+              <div className={styles.formLine}><span className={styles.lineTitle}>Other Ref.Nos.: </span>{otherRefNosName}</div>
+              <br />
+              <div className={styles.formLine}><span className={styles.lineTitle}>consignee Phone: </span>{consigneePhone}</div>
+              <div className={styles.formLine}><span className={styles.lineTitle}>consignee Address: </span>{consigneeAddress}</div>
+              <br/>
+              <div className={styles.formLine}><span className={styles.lineTitle}>Buyer Phone: </span>{buyerPhone}</div>
+              <div className={styles.formLine}><span className={styles.lineTitle}>Buyer Address </span>{buyerAddress}</div>
+              <div className={styles.formLine}><span className={styles.lineTitle}>Buyer IRS: </span>{buyerIRS}</div>
             </div>
+              {/* <h2>{formType} &rarr;</h2>
+              <div><p>{createdAt}</p></div> */}
+              {/* <div><p>{shipperAddress}</p></div> */}
+              {/* <p>Updated at {createdAt}</p>
+              <p>Updated at {updatedAt}</p> */}
+              {/* <p>{ObjectId("621e23407d301fa19a38b548").getTimestamp()}</p> */}
           </div>
-        </div>
       </main>
     </Layout>
   ) 

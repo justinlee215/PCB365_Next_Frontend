@@ -6,7 +6,7 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
-html  {
+html {
   min-height: 100%;
   position: relative;
   /* background-color: blueviolet; */
@@ -37,11 +37,10 @@ img {
 }
 
 main {
-  max-width: 1240px;
+  max-width: 1000px;
   /* background-color: aquamarine; */
   margin: auto;
   padding: 0.5rem;
-
 }
 
 h1 {

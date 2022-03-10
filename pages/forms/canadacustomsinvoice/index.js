@@ -33,12 +33,15 @@ export default function ({ canadaCustomsInvoices }) {
               <div className={styles.grid}>
                   <Link href={`/forms/canadacustomsinvoice/${invoice._id}`}>
                       <a className={styles.card}>
-                      <h2>{invoice.formType} &rarr;</h2>
-                      <div><p>{invoice.createdAt}</p></div>
-                      <div><p>{invoice.shipperAddress}</p></div>
-                      {/* <p>Updated at {invoice.createdAt}</p>
-                      <p>Updated at {invoice.updatedAt}</p> */}
-                      {/* <p>{ObjectId("621e23407d301fa19a38b548").getTimestamp()}</p> */}
+                        <h2>{invoice.formType} &rarr;</h2>
+                        <div className={styles.formLine}><span className={styles.lineTitle}>Shipper Name: </span>{invoice.shipperName}</div>
+                        <div className={styles.formLine}><span className={styles.lineTitle}>Shipper Contact: </span>{invoice.shipperContact}</div>
+                        <div className={styles.formLine}><span className={styles.lineTitle}>Shipper Address: </span>{invoice.shipperAddress}</div>
+
+                        <div><p>{invoice.createdAt}</p></div>
+                        {/* <p>Updated at {invoice.createdAt}</p>
+                        <p>Updated at {invoice.updatedAt}</p> */}
+                        {/* <p>{ObjectId("621e23407d301fa19a38b548").getTimestamp()}</p> */}
                       </a>
                   </Link>
               </div>

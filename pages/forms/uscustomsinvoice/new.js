@@ -177,10 +177,10 @@ export default function USCustomsInvoice({...props}) {
 
   const fieldGroups = [
     <ShipperFields step={step}/>,
-    // <ExporterFields step={step}/>,
-    // <ConsigneeFields step={step}/>,
-    // <BuyerFields step={step}/>,
-    // <GoodsFields step={step} />
+    <ExporterFields step={step}/>,
+    <ConsigneeFields step={step}/>,
+    <BuyerFields step={step}/>,
+    <GoodsFields step={step} />
   ]
 
   return (
